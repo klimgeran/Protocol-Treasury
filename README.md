@@ -2,3 +2,4 @@
 This bot is made to track the NEM &amp; SYMBOL Trust Fund
 
 Привет
+Ciao 
