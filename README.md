@@ -1,4 +1,4 @@
-# Discord-symbol-trust-bot
+# Discord-symbol-protocol-treasury
 This bot is made to track the NEM &amp; SYMBOL Trust Fund.
 
 (hi, plese answer)
