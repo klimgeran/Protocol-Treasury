@@ -1,6 +1,7 @@
 package com.github.klimgeran.symbol.discord.treasury.event;
 
 import java.math.BigInteger;
+import java.text.NumberFormat;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -41,7 +42,7 @@ public abstract class MessageListener {
            .then();
     }
     
-    public String getSymbolAccountInfo() {
+    private String getSymbolAccountInfo() {
     	String af = "";
     	BigInteger amount=BigInteger.ZERO;
     	try (final RepositoryFactory repositoryFactory = new RepositoryFactoryVertxImpl(
@@ -73,6 +74,22 @@ public abstract class MessageListener {
             } catch (InterruptedException ie) {
             	ie.printStackTrace();
             }
-    	return "Symbol Treasure: \n\n Address: NCHEST3QRQS4JZGOO64TH7NFJ2A63YA7TPM5PXI\n\nBalance:\n"+amount+" XYM";
+    	return "Symbol Treasure: \n\n Address: NCHEST3QRQS4JZGOO64TH7NFJ2A63YA7TPM5PXI\n\nBalance:\n"
+              +getPrintableAmount(amount)
+              +" XYM"
+		      + "\n\n" 
+		      + "————————\n"
+		      + "Support Our Symbol Nodes: \n"
+		      + "\n"
+		      + "- conrad.symbolnode.ninja\n"
+		      + "- NIS2.host\n"
+		      + "- XYM007.hos";	
+    }
+    
+    private String getPrintableAmount(BigInteger amount) {
+    	BigInteger oneMillion = new BigInteger("1000000");
+    	BigInteger oneMillionth = amount.divide(oneMillion);
+    	return oneMillionth.toString();
+    	
     }
 }
