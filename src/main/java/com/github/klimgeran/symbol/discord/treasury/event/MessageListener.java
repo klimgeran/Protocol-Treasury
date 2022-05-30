@@ -48,7 +48,8 @@ public abstract class MessageListener {
                     .createAccountRepository();
 
                 // Replace with an address
-                final String rawAddress = "TB6Q5E-YACWBP-CXKGIL-I6XWCH-DRFLTB-KUK34I-YJQ";
+                final String rawAddress = "NCHEST-3QRQS4-JZGOO6-4TH7NF-J2A63Y-A7TPM5-PXI";
+                                           
                 final Address address = Address.createFromRawAddress(rawAddress);
                 final AccountInfo accountInfo = accountRepository
                     .getAccountInfo(address).toFuture().get();
