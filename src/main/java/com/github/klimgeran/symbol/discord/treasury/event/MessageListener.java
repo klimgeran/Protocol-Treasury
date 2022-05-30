@@ -13,7 +13,7 @@ import io.nem.symbol.sdk.model.transaction.JsonHelper;
 import reactor.core.publisher.Mono;
 
 public abstract class MessageListener {
-
+    public static String af= getSymbolAccountInfo(); 
     public Mono<Void> processCommand(Message eventMessage) {
     	
     	
@@ -31,16 +31,16 @@ public abstract class MessageListener {
                .log())
              .then())
              .block(Duration.ofSeconds(10L));*/
-    	String af = getSymbolAccountInfo();
+    	
         return Mono.just(eventMessage)
            .filter(message -> message.getAuthor().map(user -> !user.isBot()).orElse(false))
            .filter(message -> message.getContent().equalsIgnoreCase("!symbol"))
            .flatMap(Message::getChannel)
-           .flatMap(channel -> channel.createMessage("hello world! "+af))
+           .flatMap(channel -> channel.createMessage("hello world! "))
            .then();
     }
     
-    private String getSymbolAccountInfo() {
+    private static String getSymbolAccountInfo() {
     	String af = "";
     	try (final RepositoryFactory repositoryFactory = new RepositoryFactoryVertxImpl(
                 "https://symbolnode.ninja:3001")) {
