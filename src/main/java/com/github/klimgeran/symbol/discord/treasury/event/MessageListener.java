@@ -2,6 +2,8 @@ package com.github.klimgeran.symbol.discord.treasury.event;
 
 import java.util.concurrent.ExecutionException;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import discord4j.core.object.entity.Message;
 import io.nem.symbol.sdk.api.AccountRepository;
 import io.nem.symbol.sdk.api.RepositoryFactory;
@@ -14,8 +16,10 @@ import reactor.core.publisher.Mono;
 
 public abstract class MessageListener {
    
+    @Value("${message-symbol}")
+    private static String messageSymbol;
+	
     public Mono<Void> processCommand(Message eventMessage) {
-    	
     	
     	/* WebSocketClient client = new ReactorNettyWebSocketClient();
     	 client.execute(URI.create("ws://cola-potatochips:3001/ws"), 
@@ -36,7 +40,7 @@ public abstract class MessageListener {
            .filter(message -> message.getAuthor().map(user -> !user.isBot()).orElse(false))
            .filter(message -> message.getContent().equalsIgnoreCase("!symbol"))
            .flatMap(Message::getChannel)
-           .flatMap(channel -> channel.createMessage("hello world! "+getSymbolAccountInfo()))
+           .flatMap(channel -> channel.createMessage("hello world! "))
            .then();
     }
     
@@ -62,6 +66,6 @@ public abstract class MessageListener {
             } catch (InterruptedException ie) {
             	ie.printStackTrace();
             }
-    	return af;
+    	return messageSymbol;
     }
 }

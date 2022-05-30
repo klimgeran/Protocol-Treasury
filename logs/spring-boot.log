@@ -1,0 +1,10 @@
+2022-05-30 12:05:03,238 INFO org.springframework.boot.StartupInfoLogger [main] Starting TreasuryApplicationTests using Java 17.0.2 on MBW10S80514 with PID 17908 (started by FABRIZIO-CANDON in G:\Il mio Drive\eclipse-workspace\Discord-symbol-protocol-treasury)
+2022-05-30 12:05:03,243 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-05-30 12:05:05,260 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [main] Autowired annotation is not supported on static fields: private static java.lang.String com.github.klimgeran.symbol.discord.treasury.event.MessageListener.messageSymbol
+2022-05-30 12:05:05,288 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [main] Autowired annotation is not supported on static fields: private static java.lang.String com.github.klimgeran.symbol.discord.treasury.event.MessageListener.messageSymbol
+2022-05-30 12:05:06,137 INFO reactor.util.Loggers$Slf4JLogger [main] Discord4J 3.2.2 (https://discord4j.com)
+2022-05-30 12:05:09,402 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-nio-1] [G:3ecfd4b, S:0] Connected to Gateway
+2022-05-30 12:05:09,408 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-nio-1] [G:3ecfd4b, S:0] Shard connected
+2022-05-30 12:05:10,768 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-05-30 12:05:12,091 INFO org.springframework.boot.StartupInfoLogger [main] Started TreasuryApplicationTests in 9.668 seconds (JVM running for 11.731)
+2022-05-30 12:05:13,074 WARN reactor.util.Loggers$Slf4JLogger [reactor-http-nio-1] [G:3ecfd4b, S:0] discord4j.common.close.CloseException: WebSocket closed: 1006 Abnormal closure caused by discord4j.gateway.retry.GatewayException: Inbound close status
