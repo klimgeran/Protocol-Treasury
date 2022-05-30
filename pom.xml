@@ -94,6 +94,12 @@
     		<version>[2.2.3,)</version>
 		</dependency>
 	
+	<dependency>
+      <groupId>io.nem</groupId>
+      <artifactId>symbol-sdk-vertx-client</artifactId>
+      <version>0.23.2</version>
+    </dependency>
+	
 	</dependencies>
 
 	<build>

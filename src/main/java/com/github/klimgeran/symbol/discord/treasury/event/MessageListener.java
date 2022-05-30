@@ -1,13 +1,15 @@
 package com.github.klimgeran.symbol.discord.treasury.event;
 
-import java.net.URI;
-import java.time.Duration;
-
-import org.springframework.web.reactive.socket.WebSocketMessage;
-import org.springframework.web.reactive.socket.client.ReactorNettyWebSocketClient;
-import org.springframework.web.reactive.socket.client.WebSocketClient;
+import java.util.concurrent.ExecutionException;
 
 import discord4j.core.object.entity.Message;
+import io.nem.symbol.sdk.api.AccountRepository;
+import io.nem.symbol.sdk.api.RepositoryFactory;
+import io.nem.symbol.sdk.infrastructure.vertx.JsonHelperJackson2;
+import io.nem.symbol.sdk.infrastructure.vertx.RepositoryFactoryVertxImpl;
+import io.nem.symbol.sdk.model.account.AccountInfo;
+import io.nem.symbol.sdk.model.account.Address;
+import io.nem.symbol.sdk.model.transaction.JsonHelper;
 import reactor.core.publisher.Mono;
 
 public abstract class MessageListener {
@@ -15,11 +17,11 @@ public abstract class MessageListener {
     public Mono<Void> processCommand(Message eventMessage) {
     	
     	
-    	 WebSocketClient client = new ReactorNettyWebSocketClient();
+    	/* WebSocketClient client = new ReactorNettyWebSocketClient();
     	 client.execute(URI.create("ws://cola-potatochips:3001/ws"), 
     			 session -> session.receive().map(WebSocketMessage::getPayloadAsText).log().then());//.map(WebSocketMessage::getPayloadAsText).log();
     			 
-                 
+         */        
          /*client.execute(
            URI.create("ws://cola-potatochips:3001/ws"), 
            session -> session.send(
@@ -36,5 +38,29 @@ public abstract class MessageListener {
            .flatMap(Message::getChannel)
            .flatMap(channel -> channel.createMessage("hello world!"))
            .then();
+    }
+    
+    private String getSymbolAccountInfo() {
+    	String af = "";
+    	try (final RepositoryFactory repositoryFactory = new RepositoryFactoryVertxImpl(
+                "https://conrad.symbolnode.ninja:3001")) {
+                final AccountRepository accountRepository = repositoryFactory
+                    .createAccountRepository();
+
+                // Replace with an address
+                final String rawAddress = "TB6Q5E-YACWBP-CXKGIL-I6XWCH-DRFLTB-KUK34I-YJQ";
+                final Address address = Address.createFromRawAddress(rawAddress);
+                final AccountInfo accountInfo = accountRepository
+                    .getAccountInfo(address).toFuture().get();
+                final JsonHelper helper = new JsonHelperJackson2();
+                af=helper.prettyPrint(accountInfo);
+                System.out.println(af);
+                
+            } catch (ExecutionException ee) {
+            	ee.printStackTrace();
+            } catch (InterruptedException ie) {
+            	ie.printStackTrace();
+            }
+    	return af;
     }
 }
