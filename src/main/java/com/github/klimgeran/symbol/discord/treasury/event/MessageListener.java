@@ -31,12 +31,12 @@ public abstract class MessageListener {
                .log())
              .then())
              .block(Duration.ofSeconds(10L));*/
-    	
+    	String af = getSymbolAccountInfo();
         return Mono.just(eventMessage)
            .filter(message -> message.getAuthor().map(user -> !user.isBot()).orElse(false))
            .filter(message -> message.getContent().equalsIgnoreCase("!symbol"))
            .flatMap(Message::getChannel)
-           .flatMap(channel -> channel.createMessage("hello world! "+getSymbolAccountInfo()))
+           .flatMap(channel -> channel.createMessage("hello world! "+af))
            .then();
     }
     
