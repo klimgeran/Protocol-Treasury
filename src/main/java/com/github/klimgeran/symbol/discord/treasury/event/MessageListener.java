@@ -13,7 +13,7 @@ import io.nem.symbol.sdk.model.transaction.JsonHelper;
 import reactor.core.publisher.Mono;
 
 public abstract class MessageListener {
-    public static String af= getSymbolAccountInfo(); 
+   
     public Mono<Void> processCommand(Message eventMessage) {
     	
     	
@@ -40,7 +40,7 @@ public abstract class MessageListener {
            .then();
     }
     
-    public static String getSymbolAccountInfo() {
+    public String getSymbolAccountInfo() {
     	String af = "";
     	try (final RepositoryFactory repositoryFactory = new RepositoryFactoryVertxImpl(
                 "https://symbolnode.ninja:3001")) {
