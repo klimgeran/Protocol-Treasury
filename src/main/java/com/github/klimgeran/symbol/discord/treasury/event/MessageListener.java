@@ -15,10 +15,7 @@ import io.nem.symbol.sdk.model.transaction.JsonHelper;
 import reactor.core.publisher.Mono;
 
 public abstract class MessageListener {
-   
-    @Value("${message-symbol}")
-    private static String messageSymbol;
-	
+   	
     public Mono<Void> processCommand(Message eventMessage) {
     	
     	/* WebSocketClient client = new ReactorNettyWebSocketClient();
@@ -66,6 +63,6 @@ public abstract class MessageListener {
             } catch (InterruptedException ie) {
             	ie.printStackTrace();
             }
-    	return messageSymbol;
+    	return "Symbol Treasure: \n\n Address: NCHEST3QRQS4JZGOO64TH7NFJ2A63YA7TPM5PXI\n";
     }
 }
