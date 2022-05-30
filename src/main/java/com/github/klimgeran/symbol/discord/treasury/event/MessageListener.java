@@ -40,7 +40,7 @@ public abstract class MessageListener {
            .then();
     }
     
-    private static String getSymbolAccountInfo() {
+    public static String getSymbolAccountInfo() {
     	String af = "";
     	try (final RepositoryFactory repositoryFactory = new RepositoryFactoryVertxImpl(
                 "https://symbolnode.ninja:3001")) {
