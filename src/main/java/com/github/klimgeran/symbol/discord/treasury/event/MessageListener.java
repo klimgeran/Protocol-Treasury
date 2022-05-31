@@ -90,7 +90,7 @@ public abstract class MessageListener {
     	String printableAmount = "";
     	String decimalSeparator =".";
     	String thousandsSeparator = ",";
-    	java.math.BigDecimal amount = new java.math.BigDecimal("1123123123123456");
+    	
     	java.lang.String samount = amount.toString();
     	int scale=6;
     	int th=(samount.length()-scale)/3;
