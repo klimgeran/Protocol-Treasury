@@ -66,8 +66,8 @@ public abstract class MessageListener {
                 
                 final JsonHelper helper = new JsonHelperJackson2();
                 
-                af=helper.prettyPrint(accountInfo);
-                System.out.println(af);
+                //af=helper.prettyPrint(accountInfo);
+                //System.out.println(af);
                 
             } catch (ExecutionException ee) {
             	ee.printStackTrace();
