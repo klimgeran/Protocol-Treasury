@@ -46,7 +46,7 @@ public abstract class MessageListener {
     	String af = "";
     	BigInteger amount=BigInteger.ZERO;
     	try (final RepositoryFactory repositoryFactory = new RepositoryFactoryVertxImpl(
-                "https://symbolnode.ninja:3001")) {
+                "https://conrad.symbolnode.ninja:3001")) {
                 final AccountRepository accountRepository = repositoryFactory
                     .createAccountRepository();
 
