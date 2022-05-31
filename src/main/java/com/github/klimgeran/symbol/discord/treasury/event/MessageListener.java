@@ -83,13 +83,26 @@ public abstract class MessageListener {
 		      + "\n"
 		      + "- conrad.symbolnode.ninja\n"
 		      + "- NIS2.host\n"
-		      + "- XYM007.hos";	
+		      + "- XYM007.host";	
     }
     
     private String getPrintableAmount(BigInteger amount) {
-    	BigInteger oneMillion = new BigInteger("1000000");
-    	BigInteger oneMillionth = amount.divide(oneMillion);
-    	return oneMillionth.toString();
+    	String printableAmount = "";
+    	String decimalSeparator =".";
+    	String thousandsSeparator = ",";
+    	java.math.BigDecimal amount = new java.math.BigDecimal("1123123123123456");
+    	java.lang.String samount = amount.toString();
+    	int scale=6;
+    	int th=(samount.length()-scale)/3;
+    	for(int i=0; i<th;i++) {
+    		System.out.println(samount.substring(samount.length()-scale-3-3*i, samount.length()-scale-3*i));
+    		printableAmount=samount.substring(samount.length()-scale-3-3*i, samount.length()-scale-3*i)+
+    				(i==0?"":thousandsSeparator)+printableAmount;
+    	}
+    	printableAmount=printableAmount+decimalSeparator+samount.substring(samount.length()-6, samount.length());
+    	String mostSignificant=samount.substring(0,samount.length()-scale-3*th);
+    	printableAmount=mostSignificant+("".equals(mostSignificant)?"":thousandsSeparator)+printableAmount;
+    	return printableAmount;
     	
     }
 }
