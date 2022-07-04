@@ -4,8 +4,6 @@
 
 **This bot is made to track the NEM &amp; SYMBOL Protocol Treasury.**
 
-> Join the Symbol & NEM Community 👉 https://discord.gg/xymcity
-
 
 ![bot](https://i.imgur.com/MYXppuY.jpg)
 
@@ -30,7 +28,6 @@ Symbol SDK, NEM SDK
 ```
 Java
 ```
-![](https://i.imgur.com/3sfMQMl.png)
 
 
 ---
