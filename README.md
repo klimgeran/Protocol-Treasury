@@ -16,8 +16,13 @@ The address of the Symbol Treasure is located at this address:
 The address of the NEM Treasure is located at this address:
 
 > - [NEM](https://explorer.nemtool.com/#/s_account?account=NCHESTYVD2P6P646AMY7WSNG73PCPZDUQNSD6JAK) 
-- What means to track a Trust Fund
-- Which SDK to use? Symbol SDK, NEM SDK
-- Which language? Java
+
+- Which SDK to use? 
+
+'Symbol SDK, NEM SDK'
+
+- Which language? 
+
+'Java'
 
 
