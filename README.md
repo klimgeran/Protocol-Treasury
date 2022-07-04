@@ -17,8 +17,26 @@ The address of the NEM Treasure is located at this address:
 
 > - [NEM](https://explorer.nemtool.com/#/s_account?account=NCHESTYVD2P6P646AMY7WSNG73PCPZDUQNSD6JAK) 
 
-- Which SDK to use? Symbol SDK, NEM SDK
+- Which SDK to use? 
 
-- Which language? Java
+```
+Symbol SDK, NEM SDK
+```
+
+- Which language? 
+
+```
+Java
+```
+
+
+---
+
+This bot was developed by 3 people:
+
+- Klim ([NIS2.host](https://nis2.host:3001/node/info))
+- Fabricio ([conrad.symbolnode.ninja](https://conrad.symbolnode.ninja:3001/node/info))
+- Angel ([XYM007.host](https://xym007.host:3001/node/info))
+
 
 
