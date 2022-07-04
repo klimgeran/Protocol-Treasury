@@ -1,4 +1,4 @@
-# Discord-symbol-protocol-treasury
+# Protocol Treasury
 
 
 
