@@ -17,12 +17,8 @@ The address of the NEM Treasure is located at this address:
 
 > - [NEM](https://explorer.nemtool.com/#/s_account?account=NCHESTYVD2P6P646AMY7WSNG73PCPZDUQNSD6JAK) 
 
-- Which SDK to use? 
+- Which SDK to use? Symbol SDK, NEM SDK
 
-"Symbol SDK, NEM SDK"
-
-- Which language? 
-
-"Java"
+- Which language? Java
 
 
