@@ -1,22 +1,32 @@
 package com.github.klimgeran.symbol.discord.treasury.event;
 
 import java.math.BigInteger;
-import java.text.NumberFormat;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+
+import org.springframework.web.reactive.function.client.WebClient;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import discord4j.core.object.entity.Message;
 import io.nem.symbol.sdk.api.AccountRepository;
 import io.nem.symbol.sdk.api.RepositoryFactory;
-import io.nem.symbol.sdk.infrastructure.vertx.JsonHelperJackson2;
 import io.nem.symbol.sdk.infrastructure.vertx.RepositoryFactoryVertxImpl;
 import io.nem.symbol.sdk.model.account.AccountInfo;
 import io.nem.symbol.sdk.model.account.Address;
 import io.nem.symbol.sdk.model.mosaic.ResolvedMosaic;
-import io.nem.symbol.sdk.model.transaction.JsonHelper;
 import reactor.core.publisher.Mono;
 
 public abstract class MessageListener {
+	
+	private final String TREASURY = "!treasury";
+	private final String SYMBOL = "symbol";
+	private final String NEM = "nem";
+	private final String ALL = "all";
+	
    	
     public Mono<Void> processCommand(Message eventMessage) {
     	/* WebSocketClient client = new ReactorNettyWebSocketClient();
@@ -36,10 +46,23 @@ public abstract class MessageListener {
     	
         return Mono.just(eventMessage)
            .filter(message -> message.getAuthor().map(user -> !user.isBot()).orElse(false))
-           .filter(message -> message.getContent().equalsIgnoreCase("!symbol"))
+           .filter(message -> message.getContent().toLowerCase().startsWith(TREASURY))
            .flatMap(Message::getChannel)
-           .flatMap(channel -> channel.createMessage(getSymbolAccountInfo()))
+           .flatMap(channel -> channel.createMessage(getAccountInfo(eventMessage.getContent().toLowerCase())))
            .then();
+    }
+    
+    private String getAccountInfo(String msg) {
+    	String subcommand=msg.substring(msg.lastIndexOf(TREASURY));
+    	if(subcommand.matches(SYMBOL)) {
+    		return getSymbolAccountInfo();
+    	} else if(subcommand.matches(NEM)) {
+    		return getNEMAccountInfo();
+    	} else if(subcommand.matches(ALL)) {
+    		return getSymbolAccountInfo()+"\n"+
+    			   getNEMAccountInfo();
+    	}
+    	return "";
     }
     
     private String getSymbolAccountInfo() {
@@ -63,9 +86,7 @@ public abstract class MessageListener {
 					  amount=resolvedMosaic.getAmount();
 				  }
 				}
-                
-                final JsonHelper helper = new JsonHelperJackson2();
-                
+                              
                 //af=helper.prettyPrint(accountInfo);
                 //System.out.println(af);
                 
@@ -84,6 +105,40 @@ public abstract class MessageListener {
 		      + "- conrad.symbolnode.ninja\n"
 		      + "- NIS2.host\n"
 		      + "- XYM007.host";	
+    }
+
+    private String getNEMAccountInfo() {
+    	BigInteger amount=BigInteger.ZERO;
+    	WebClient client = WebClient.create();
+
+    	WebClient.ResponseSpec responseSpec = client.get()
+    	    .uri("http://88.99.87.132:7890/account/get?address=NCHESTYVD2P6P646AMY7WSNG73PCPZDUQNSD6JAK")
+    	    .retrieve();
+    	String responseBody = responseSpec.bodyToMono(String.class).block();
+
+    	ObjectMapper mapper = new ObjectMapper();
+    	try {
+    	    JsonNode neoJsonNode = mapper.readTree(responseBody);
+    	    amount=neoJsonNode.get("account").get("balance").bigIntegerValue();
+    	    
+    	} catch (JsonMappingException jme) {
+    		jme.printStackTrace();
+    	} catch (JsonProcessingException jpe) {
+    		jpe.printStackTrace();
+    	}
+    	
+    	return "NEM Treasure: \n\n Address: NCHESTYVD2P6P646AMY7WSNG73PCPZDUQNSD6JAK\n\nBalance:\n"
+	        +getPrintableAmount(amount)
+	        +" XEM"
+		      + "\n\n" 
+		      + "————————\n"
+		      + "Support Our Symbol Nodes: \n"
+		      + "\n"
+		      + "- conrad.symbolnode.ninja\n"
+		      + "- NIS2.host\n"
+		      + "- XYM007.host";
+
+   	
     }
     
     private String getPrintableAmount(BigInteger amount) {

@@ -17,7 +17,7 @@ public class BotConfiguration {
 
     @Value("${token}")
     private String token;
-
+    
     @Bean
     public <T extends Event> GatewayDiscordClient gatewayDiscordClient(List<EventListener<T>> eventListeners) {
     	GatewayDiscordClient client = DiscordClientBuilder.create(token).build().login().block();
