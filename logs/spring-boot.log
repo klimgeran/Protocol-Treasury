@@ -369,3 +369,276 @@ Caused by: java.lang.IllegalArgumentException: Illegal base64 character 2d
 	at java.base/java.util.Base64$Decoder.decode(Base64.java:589)
 	at discord4j.common.util.TokenUtil.getSelfId(TokenUtil.java:33)
 	... 104 common frames omitted
+2022-07-11 20:39:38,340 INFO org.springframework.boot.StartupInfoLogger [main] Starting TreasuryApplicationTests using Java 17.0.3 on pequod with PID 22632 (started by x117fab in /home/x117fab/git/Discord-symbol-protocol-treasury)
+2022-07-11 20:39:38,342 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-07-11 20:39:40,192 INFO reactor.util.Loggers$Slf4JLogger [main] Discord4J 3.2.2 (https://discord4j.com)
+2022-07-11 20:39:42,864 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:61c44e9b, S:0] Connected to Gateway
+2022-07-11 20:39:42,867 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:61c44e9b, S:0] Shard connected
+2022-07-11 20:39:43,687 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-07-11 20:39:44,234 INFO org.springframework.boot.StartupInfoLogger [main] Started TreasuryApplicationTests in 6.541 seconds (JVM running for 8.033)
+2022-07-11 20:39:44,939 WARN reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:61c44e9b, S:0] discord4j.common.close.CloseException: WebSocket closed: 1006 Abnormal closure caused by discord4j.gateway.retry.GatewayException: Inbound close status
+2022-07-11 20:40:31,534 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting TreasuryApplication using Java 17.0.3 on pequod with PID 22840 (/home/x117fab/git/Discord-symbol-protocol-treasury/target/classes started by x117fab in /home/x117fab/git/Discord-symbol-protocol-treasury)
+2022-07-11 20:40:31,536 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-11 20:40:31,627 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-11 20:40:31,633 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-11 20:40:32,957 INFO reactor.util.Loggers$Slf4JLogger [restartedMain] Discord4J 3.2.2 (https://discord4j.com)
+2022-07-11 20:40:35,173 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:3edb2d5e, S:0] Connected to Gateway
+2022-07-11 20:40:35,175 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:3edb2d5e, S:0] Shard connected
+2022-07-11 20:40:35,556 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-07-11 20:40:35,909 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-07-11 20:40:35,940 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2022-07-11 20:40:35,956 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started TreasuryApplication in 4.857 seconds (JVM running for 5.307)
+2022-07-11 20:41:41,162 ERROR com.github.klimgeran.symbol.discord.treasury.event.EventListener [boundedElastic-1] Unable to process MessageCreateEvent
+discord4j.rest.http.client.ClientException: POST /channels/702683795060686900/messages returned 400 Bad Request with response {code=50006, message=Cannot send an empty message}
+	at discord4j.rest.http.client.ClientResponse.clientException(ClientResponse.java:171)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to POST /channels/702683795060686900/messages [RequestStream]
+	*__checkpoint ⇢ Request to POST /channels/702683795060686900/messages [DefaultRouter]
+Original Stack Trace:
+		at discord4j.rest.http.client.ClientResponse.clientException(ClientResponse.java:171)
+		at discord4j.rest.http.client.ClientResponse.lambda$createException$13(ClientResponse.java:149)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:125)
+		at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1816)
+		at reactor.core.publisher.MonoFlatMap$FlatMapInner.onNext(MonoFlatMap.java:249)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:120)
+		at reactor.core.publisher.FluxHandle$HandleSubscriber.onNext(FluxHandle.java:126)
+		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
+		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
+		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854)
+		at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onNext(FluxMap.java:220)
+		at reactor.core.publisher.FluxDoFinally$DoFinallySubscriber.onNext(FluxDoFinally.java:130)
+		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onNext(FluxHandleFuseable.java:191)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+		at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1816)
+		at reactor.core.publisher.MonoCollectList$MonoCollectListSubscriber.onComplete(MonoCollectList.java:128)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:142)
+		at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:400)
+		at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:419)
+		at reactor.netty.channel.ChannelOperations.terminate(ChannelOperations.java:473)
+		at reactor.netty.http.client.HttpClientOperations.onInboundNext(HttpClientOperations.java:703)
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:93)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:327)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:299)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1372)
+		at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1235)
+		at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1284)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:510)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:449)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:279)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.epoll.AbstractEpollStreamChannel$EpollStreamUnsafe.epollInReady(AbstractEpollStreamChannel.java:800)
+		at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:487)
+		at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:385)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-11 20:46:14,962 WARN reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:3edb2d5e, S:0] discord4j.common.close.CloseException: WebSocket closed: 1006 Abnormal closure caused by discord4j.gateway.retry.GatewayException: Inbound close status
+2022-07-11 20:48:51,993 INFO org.springframework.boot.StartupInfoLogger [main] Starting TreasuryApplicationTests using Java 17.0.3 on pequod with PID 23804 (started by x117fab in /home/x117fab/git/Discord-symbol-protocol-treasury)
+2022-07-11 20:48:51,998 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-07-11 20:48:53,719 INFO reactor.util.Loggers$Slf4JLogger [main] Discord4J 3.2.2 (https://discord4j.com)
+2022-07-11 20:48:56,314 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:28c3765, S:0] Connected to Gateway
+2022-07-11 20:48:56,318 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:28c3765, S:0] Shard connected
+2022-07-11 20:48:57,074 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-07-11 20:48:57,622 INFO org.springframework.boot.StartupInfoLogger [main] Started TreasuryApplicationTests in 6.188 seconds (JVM running for 7.664)
+2022-07-11 20:48:58,142 WARN reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:28c3765, S:0] discord4j.common.close.CloseException: WebSocket closed: 1006 Abnormal closure caused by discord4j.gateway.retry.GatewayException: Inbound close status
+2022-07-11 20:48:58,161 ERROR reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:28c3765, S:0] Gateway client error
+java.net.UnknownHostException: Failed to resolve 'gateway.discord.gg' after 2 queries 
+	at io.netty.resolver.dns.DnsResolveContext.finishResolve(DnsResolveContext.java:1047)
+	at io.netty.resolver.dns.DnsResolveContext.tryToFinishResolve(DnsResolveContext.java:1000)
+	at io.netty.resolver.dns.DnsResolveContext.query(DnsResolveContext.java:418)
+	at io.netty.resolver.dns.DnsResolveContext.access$600(DnsResolveContext.java:66)
+	at io.netty.resolver.dns.DnsResolveContext$2.operationComplete(DnsResolveContext.java:467)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:552)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.addListener(DefaultPromise.java:184)
+	at io.netty.util.concurrent.DefaultPromise.addListener(DefaultPromise.java:35)
+	at io.netty.resolver.dns.DnsResolveContext.query(DnsResolveContext.java:442)
+	at io.netty.resolver.dns.DnsResolveContext.access$600(DnsResolveContext.java:66)
+	at io.netty.resolver.dns.DnsResolveContext$2.operationComplete(DnsResolveContext.java:467)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:552)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.addListener(DefaultPromise.java:184)
+	at io.netty.util.concurrent.DefaultPromise.addListener(DefaultPromise.java:35)
+	at io.netty.resolver.dns.DnsResolveContext.query(DnsResolveContext.java:442)
+	at io.netty.resolver.dns.DnsResolveContext.query(DnsResolveContext.java:1113)
+	at io.netty.resolver.dns.DnsResolveContext.internalResolve(DnsResolveContext.java:354)
+	at io.netty.resolver.dns.DnsResolveContext.resolve(DnsResolveContext.java:215)
+	at io.netty.resolver.dns.DnsNameResolver.doResolveAllUncached0(DnsNameResolver.java:1158)
+	at io.netty.resolver.dns.DnsNameResolver.access$500(DnsNameResolver.java:91)
+	at io.netty.resolver.dns.DnsNameResolver$7.run(DnsNameResolver.java:1137)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasksFrom(SingleThreadEventExecutor.java:425)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:374)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:760)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:409)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: io.netty.resolver.dns.DnsNameResolverException: [/185.12.64.2:53] failed to send a query via UDP (no stack trace available)
+Caused by: io.netty.channel.StacklessClosedChannelException: null
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.write(Object, ChannelPromise)(Unknown Source)
+2022-07-11 20:56:25,992 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting TreasuryApplication using Java 17.0.3 on pequod with PID 24665 (/home/x117fab/git/Discord-symbol-protocol-treasury/target/classes started by x117fab in /home/x117fab/git/Discord-symbol-protocol-treasury)
+2022-07-11 20:56:25,995 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-11 20:56:26,116 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-11 20:56:26,117 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-11 20:56:27,480 INFO reactor.util.Loggers$Slf4JLogger [restartedMain] Discord4J 3.2.2 (https://discord4j.com)
+2022-07-11 20:56:29,715 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:17f59179, S:0] Connected to Gateway
+2022-07-11 20:56:29,717 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:17f59179, S:0] Shard connected
+2022-07-11 20:56:30,088 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-07-11 20:56:30,425 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-07-11 20:56:30,449 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2022-07-11 20:56:30,481 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started TreasuryApplication in 5.005 seconds (JVM running for 5.575)
+2022-07-11 20:57:35,177 WARN reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:17f59179, S:0] discord4j.common.close.CloseException: WebSocket closed: 1006 Abnormal closure caused by discord4j.gateway.retry.GatewayException: Inbound close status
+2022-07-11 20:59:41,714 INFO org.springframework.boot.StartupInfoLogger [main] Starting TreasuryApplicationTests using Java 17.0.3 on pequod with PID 25250 (started by x117fab in /home/x117fab/git/Discord-symbol-protocol-treasury)
+2022-07-11 20:59:41,717 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-07-11 20:59:43,453 INFO reactor.util.Loggers$Slf4JLogger [main] Discord4J 3.2.2 (https://discord4j.com)
+2022-07-11 20:59:45,947 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:71ce0c50, S:0] Connected to Gateway
+2022-07-11 20:59:45,952 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:71ce0c50, S:0] Shard connected
+2022-07-11 20:59:46,742 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-07-11 20:59:47,200 INFO org.springframework.boot.StartupInfoLogger [main] Started TreasuryApplicationTests in 5.946 seconds (JVM running for 7.253)
+2022-07-11 20:59:47,700 WARN reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:71ce0c50, S:0] discord4j.common.close.CloseException: WebSocket closed: 1006 Abnormal closure caused by discord4j.gateway.retry.GatewayException: Inbound close status
+2022-07-11 21:00:17,795 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting TreasuryApplication using Java 17.0.3 on pequod with PID 25417 (/home/x117fab/git/Discord-symbol-protocol-treasury/target/classes started by x117fab in /home/x117fab/git/Discord-symbol-protocol-treasury)
+2022-07-11 21:00:17,797 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-11 21:00:17,890 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-11 21:00:17,892 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-11 21:00:19,279 INFO reactor.util.Loggers$Slf4JLogger [restartedMain] Discord4J 3.2.2 (https://discord4j.com)
+2022-07-11 21:00:21,496 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:32fc73c, S:0] Connected to Gateway
+2022-07-11 21:00:21,499 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:32fc73c, S:0] Shard connected
+2022-07-11 21:00:21,916 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-07-11 21:00:22,279 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-07-11 21:00:22,302 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2022-07-11 21:00:22,318 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started TreasuryApplication in 5.032 seconds (JVM running for 5.505)
+2022-07-11 21:01:25,455 WARN reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:32fc73c, S:0] discord4j.common.close.CloseException: WebSocket closed: 1006 Abnormal closure caused by discord4j.gateway.retry.GatewayException: Inbound close status
+2022-07-11 21:06:08,106 INFO org.springframework.boot.StartupInfoLogger [main] Starting TreasuryApplicationTests using Java 17.0.3 on pequod with PID 26150 (started by x117fab in /home/x117fab/git/Discord-symbol-protocol-treasury)
+2022-07-11 21:06:08,118 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-07-11 21:06:09,889 INFO reactor.util.Loggers$Slf4JLogger [main] Discord4J 3.2.2 (https://discord4j.com)
+2022-07-11 21:06:12,368 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:42d58586, S:0] Connected to Gateway
+2022-07-11 21:06:12,374 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:42d58586, S:0] Shard connected
+2022-07-11 21:06:13,294 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-07-11 21:06:13,870 INFO org.springframework.boot.StartupInfoLogger [main] Started TreasuryApplicationTests in 6.386 seconds (JVM running for 7.788)
+2022-07-11 21:06:14,396 WARN reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:42d58586, S:0] discord4j.common.close.CloseException: WebSocket closed: 1006 Abnormal closure caused by discord4j.gateway.retry.GatewayException: Inbound close status
+2022-07-11 21:06:30,187 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting TreasuryApplication using Java 17.0.3 on pequod with PID 26292 (/home/x117fab/git/Discord-symbol-protocol-treasury/target/classes started by x117fab in /home/x117fab/git/Discord-symbol-protocol-treasury)
+2022-07-11 21:06:30,189 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-11 21:06:30,279 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-11 21:06:30,279 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-11 21:06:31,502 INFO reactor.util.Loggers$Slf4JLogger [restartedMain] Discord4J 3.2.2 (https://discord4j.com)
+2022-07-11 21:06:33,700 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:a685f4d, S:0] Connected to Gateway
+2022-07-11 21:06:33,703 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:a685f4d, S:0] Shard connected
+2022-07-11 21:06:34,093 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-07-11 21:06:34,491 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-07-11 21:06:34,553 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2022-07-11 21:06:34,575 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started TreasuryApplication in 4.85 seconds (JVM running for 5.281)
+2022-07-11 21:07:18,908 WARN reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:a685f4d, S:0] discord4j.common.close.CloseException: WebSocket closed: 1006 Abnormal closure caused by discord4j.gateway.retry.GatewayException: Inbound close status
+2022-07-11 21:08:14,406 INFO org.springframework.boot.StartupInfoLogger [main] Starting TreasuryApplicationTests using Java 17.0.3 on pequod with PID 26576 (started by x117fab in /home/x117fab/git/Discord-symbol-protocol-treasury)
+2022-07-11 21:08:14,411 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-07-11 21:08:15,994 INFO reactor.util.Loggers$Slf4JLogger [main] Discord4J 3.2.2 (https://discord4j.com)
+2022-07-11 21:08:18,453 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:41b183dd, S:0] Connected to Gateway
+2022-07-11 21:08:18,457 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:41b183dd, S:0] Shard connected
+2022-07-11 21:08:19,319 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-07-11 21:08:19,849 INFO org.springframework.boot.StartupInfoLogger [main] Started TreasuryApplicationTests in 5.887 seconds (JVM running for 7.151)
+2022-07-11 21:08:20,395 WARN reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:41b183dd, S:0] discord4j.common.close.CloseException: WebSocket closed: 1006 Abnormal closure caused by discord4j.gateway.retry.GatewayException: Inbound close status
+2022-07-11 21:08:20,905 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-2] [G:41b183dd, S:0] Reconnected to Gateway
+2022-07-11 21:08:33,374 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting TreasuryApplication using Java 17.0.3 on pequod with PID 26720 (/home/x117fab/git/Discord-symbol-protocol-treasury/target/classes started by x117fab in /home/x117fab/git/Discord-symbol-protocol-treasury)
+2022-07-11 21:08:33,376 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-11 21:08:33,471 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-11 21:08:33,471 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-11 21:08:34,697 INFO reactor.util.Loggers$Slf4JLogger [restartedMain] Discord4J 3.2.2 (https://discord4j.com)
+2022-07-11 21:08:36,931 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:7c2e114c, S:0] Connected to Gateway
+2022-07-11 21:08:36,934 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:7c2e114c, S:0] Shard connected
+2022-07-11 21:08:37,377 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-07-11 21:08:37,711 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-07-11 21:08:37,733 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2022-07-11 21:08:37,750 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started TreasuryApplication in 4.808 seconds (JVM running for 5.215)
+2022-07-11 21:09:23,293 ERROR com.github.klimgeran.symbol.discord.treasury.event.EventListener [d4j-events-2] Unable to process MessageCreateEvent
+java.lang.StringIndexOutOfBoundsException: begin 10, end 9, length 9
+	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4604)
+	at java.base/java.lang.String.substring(String.java:2707)
+	at java.base/java.lang.String.substring(String.java:2680)
+	at com.github.klimgeran.symbol.discord.treasury.event.MessageListener.getAccountInfo(MessageListener.java:56)
+	at com.github.klimgeran.symbol.discord.treasury.event.MessageListener.lambda$processCommand$3(MessageListener.java:51)
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:125)
+	at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1816)
+	at reactor.core.publisher.MonoFlatMap$FlatMapInner.onNext(MonoFlatMap.java:249)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:120)
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:127)
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2398)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:169)
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:2194)
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:2068)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onSubscribe(FluxMapFuseable.java:96)
+	at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:55)
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64)
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:157)
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onNext(FluxFilterFuseable.java:118)
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337)
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2398)
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.request(FluxFilterFuseable.java:411)
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.request(FluxFilterFuseable.java:191)
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onSubscribe(MonoFlatMap.java:110)
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onSubscribe(FluxFilterFuseable.java:87)
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onSubscribe(FluxFilterFuseable.java:305)
+	at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:55)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4400)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:426)
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.tryOnNext(FluxContextWrite.java:115)
+	at reactor.core.publisher.FluxDoFinally$DoFinallyFuseableConditionalSubscriber.tryOnNext(FluxDoFinally.java:255)
+	at reactor.core.publisher.FluxPeekFuseable$PeekFuseableConditionalSubscriber.tryOnNext(FluxPeekFuseable.java:530)
+	at reactor.core.publisher.FluxHandleFuseable$HandleFuseableConditionalSubscriber.tryOnNext(FluxHandleFuseable.java:559)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.tryOnNext(FluxMapFuseable.java:311)
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.tryOnNext(FluxFilterFuseable.java:367)
+	at reactor.core.publisher.FluxPublishOn$PublishOnConditionalSubscriber.runAsync(FluxPublishOn.java:992)
+	at reactor.core.publisher.FluxPublishOn$PublishOnConditionalSubscriber.run(FluxPublishOn.java:1067)
+	at reactor.scheduler.forkjoin.ForkJoinPoolScheduler$DisposableWorkerTask.run(ForkJoinPoolScheduler.java:443)
+	at reactor.scheduler.forkjoin.ForkJoinPoolScheduler$Worker.processTaskQueue(ForkJoinPoolScheduler.java:407)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1395)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+2022-07-11 21:09:44,921 WARN reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:7c2e114c, S:0] discord4j.common.close.CloseException: WebSocket closed: 1006 Abnormal closure caused by discord4j.gateway.retry.GatewayException: Inbound close status
+2022-07-11 21:11:56,430 INFO org.springframework.boot.StartupInfoLogger [main] Starting TreasuryApplicationTests using Java 17.0.3 on pequod with PID 27162 (started by x117fab in /home/x117fab/git/Discord-symbol-protocol-treasury)
+2022-07-11 21:11:56,434 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-07-11 21:11:58,217 INFO reactor.util.Loggers$Slf4JLogger [main] Discord4J 3.2.2 (https://discord4j.com)
+2022-07-11 21:12:00,657 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:262eb18f, S:0] Connected to Gateway
+2022-07-11 21:12:00,662 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:262eb18f, S:0] Shard connected
+2022-07-11 21:12:01,541 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-07-11 21:12:02,162 INFO org.springframework.boot.StartupInfoLogger [main] Started TreasuryApplicationTests in 6.252 seconds (JVM running for 7.541)
+2022-07-11 21:12:02,639 WARN reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:262eb18f, S:0] discord4j.common.close.CloseException: WebSocket closed: 1006 Abnormal closure caused by discord4j.gateway.retry.GatewayException: Inbound close status
+2022-07-11 21:12:14,576 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting TreasuryApplication using Java 17.0.3 on pequod with PID 27303 (/home/x117fab/git/Discord-symbol-protocol-treasury/target/classes started by x117fab in /home/x117fab/git/Discord-symbol-protocol-treasury)
+2022-07-11 21:12:14,578 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-11 21:12:14,668 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-11 21:12:14,669 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-11 21:12:15,925 INFO reactor.util.Loggers$Slf4JLogger [restartedMain] Discord4J 3.2.2 (https://discord4j.com)
+2022-07-11 21:12:18,070 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:132c6534, S:0] Connected to Gateway
+2022-07-11 21:12:18,073 INFO reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:132c6534, S:0] Shard connected
+2022-07-11 21:12:18,504 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-07-11 21:12:18,866 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-07-11 21:12:18,898 INFO org.springframework.boot.web.embedded.netty.NettyWebServer [restartedMain] Netty started on port 8080
+2022-07-11 21:12:18,920 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started TreasuryApplication in 4.763 seconds (JVM running for 5.2)
+2022-07-11 21:13:13,401 WARN reactor.util.Loggers$Slf4JLogger [reactor-http-epoll-1] [G:132c6534, S:0] discord4j.common.close.CloseException: WebSocket closed: 1006 Abnormal closure caused by discord4j.gateway.retry.GatewayException: Inbound close status

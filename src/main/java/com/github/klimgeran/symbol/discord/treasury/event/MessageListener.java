@@ -23,9 +23,9 @@ import reactor.core.publisher.Mono;
 public abstract class MessageListener {
 	
 	private final String TREASURY = "!treasury";
-	private final String SYMBOL = "symbol";
-	private final String NEM = "nem";
-	private final String ALL = "all";
+	private final String SYMBOL = " symbol";
+	private final String NEM = " nem";
+	private final String ALL = " all";
 	
    	
     public Mono<Void> processCommand(Message eventMessage) {
@@ -53,16 +53,15 @@ public abstract class MessageListener {
     }
     
     private String getAccountInfo(String msg) {
-    	String subcommand=msg.substring(msg.lastIndexOf(TREASURY));
-    	if(subcommand.matches(SYMBOL)) {
+    	String subcommand=msg.substring(msg.lastIndexOf(TREASURY)+9);
+    	if(SYMBOL.equals(subcommand)) {
     		return getSymbolAccountInfo();
-    	} else if(subcommand.matches(NEM)) {
+    	} else if(NEM.equals(subcommand)) {
     		return getNEMAccountInfo();
-    	} else if(subcommand.matches(ALL)) {
-    		return getSymbolAccountInfo()+"\n"+
+    	} 
+    	return getSymbolAccountInfo()+"\n\n\n"+
     			   getNEMAccountInfo();
-    	}
-    	return "";
+    	
     }
     
     private String getSymbolAccountInfo() {
@@ -101,7 +100,7 @@ public abstract class MessageListener {
 		      + "\n\n" 
 		      + "————————\n"
 		      + "Support Our Symbol Nodes: \n"
-		      + "\n"
+		     // + "\n"
 		      + "- conrad.symbolnode.ninja\n"
 		      + "- NIS2.host\n"
 		      + "- XYM007.host";	
@@ -133,7 +132,7 @@ public abstract class MessageListener {
 		      + "\n\n" 
 		      + "————————\n"
 		      + "Support Our Symbol Nodes: \n"
-		      + "\n"
+		      //+ "\n"
 		      + "- conrad.symbolnode.ninja\n"
 		      + "- NIS2.host\n"
 		      + "- XYM007.host";
