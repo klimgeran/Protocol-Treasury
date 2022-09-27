@@ -4,7 +4,7 @@
 
 **This bot is made to track the NEM &amp; SYMBOL Protocol Treasury.**
 
-> Join the Symbol & NEM Community 👉 https://discord.gg/xymcity
+> Join the Symbol & NEM Community 👉 https://discord.gg/28evg3zQpK
 
 
 ![bot](https://i.imgur.com/MYXppuY.jpg)
